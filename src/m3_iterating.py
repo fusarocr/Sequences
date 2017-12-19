@@ -204,7 +204,21 @@ def run_test_count_short_ones():
     print('       actual:  ', actual)
 
     # TO DO 4 (continued):  Add your 2 ADDITIONAL test(s) here:
+    # Test 8:
+    expected = 0
+    seq = [[1, 3, 4, 5], [1, 1, 1], 'hello world', 'three']
+    actual = count_short_ones(seq)
+    print()
+    print('Test 8 expected:', expected)
+    print('       actual:  ', actual)
 
+    # Test 9:
+    expected = 2
+    seq = [[1, 1], [1, 80, 1, 300], 'ew', [7, 96, 66, 2]]
+    actual = count_short_ones(seq)
+    print()
+    print('Test 9 expected:', expected)
+    print('       actual:  ', actual)
 
 def count_short_ones(seq_of_lists):
     """
@@ -227,9 +241,15 @@ def count_short_ones(seq_of_lists):
       :type seq_of_lists: list or tuple (whose items are sequences too)
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
+    count = 0
+    for k in range(len(seq_of_lists)):
+        if len(seq_of_lists[k]) < 3:
+            count = count + 1
+
+    return count
 
 
 def run_test_draw_circles():
